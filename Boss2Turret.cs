@@ -31,9 +31,10 @@ public class Boss2Turret : Area2D
 		
 		var node = (AnimatedSprite)GetChild(0);
 		var node2 = (Boss2)GetParent();
-		Vector2 dir = EnemyLocation - node2.Position ;
-		float xDistance = Math.Abs(EnemyLocation.x - node2.Position.x);
-		float yDistance = Math.Abs(EnemyLocation.y - node2.Position.y);
+		var spawn = GetNode<Position2D>("AnimatedSprite2/BulletSpawn");
+		Vector2 dir = EnemyLocation - spawn.GlobalPosition ;
+		float xDistance = Math.Abs(EnemyLocation.x - spawn.GlobalPosition.x);
+		float yDistance = Math.Abs(EnemyLocation.y - spawn.GlobalPosition.y);
 		//node.Rotation = (float)Math.Atan2(dir.y,dir.x);
 		//GD.Print("X: " + node2.Position.x + " Y: " + node2.Position.y);
 		node.Rotation = (float)(dir.Angle() - (float)Math.PI*0.5);
@@ -43,8 +44,10 @@ public class Boss2Turret : Area2D
 			var mobLeft = (Bullet)MobScene.Instance();
 			GetParent().GetParent().AddChild(mobLeft);
 			var xyLeft = Vector2.Zero;
-			xyLeft.x = node2.Position.x;
-			xyLeft.y = node2.Position.y;
+			//GD.Print(spawn.GlobalPosition.x);
+			//GD.Print(spawn.GlobalPosition.y);
+			xyLeft.x = spawn.GlobalPosition.x;
+			xyLeft.y = spawn.GlobalPosition.y;
 			
 			//GD.Print(node.Rotation);
 			mobLeft.Position = xyLeft;
@@ -52,16 +55,16 @@ public class Boss2Turret : Area2D
 			float direction = mobLeft.Rotation;
 			var totalSpeed = 400;
 			var totalLength = (float)Math.Sqrt(Math.Pow(xDistance,2) + Math.Pow(yDistance,2));
-			var xPercentage = Math.Abs(EnemyLocation.x - node2.Position.x) / totalLength;
+			var xPercentage = Math.Abs(EnemyLocation.x - spawn.GlobalPosition.x) / totalLength;
 			//GD.Print(xPercentage);
 			if(xPercentage == 0)
 			{
 				mobLeft.XSpeed = 0;
 			}
-			else if (EnemyLocation.x - node2.Position.x < 0){
+			else if (EnemyLocation.x - spawn.GlobalPosition.x < 0){
 				mobLeft.XSpeed = totalSpeed * -xPercentage;
 			}
-			else if (EnemyLocation.x - node2.Position.x > 0){
+			else if (EnemyLocation.x - spawn.GlobalPosition.x > 0){
 				mobLeft.XSpeed = totalSpeed * xPercentage;
 			}
 			mobLeft.YSpeed = totalSpeed;

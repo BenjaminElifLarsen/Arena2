@@ -52,4 +52,7 @@ position = Vector2( -6, -30 )
 scale = Vector2( 0.28, 0.28 )
 frames = SubResource( 3 )
 
+[node name="BulletSpawn" type="Position2D" parent="Turret/AnimatedSprite2"]
+position = Vector2( 2, 80 )
+
 [connection signal="body_entered" from="." to="." method="OnBodyEntered"]
