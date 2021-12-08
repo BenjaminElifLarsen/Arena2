@@ -52,12 +52,12 @@ volume_db = -6.0
 [node name="Damage" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 6 )
 
+[node name="DeathPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 9 )
+
 [node name="LazerPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 8 )
 volume_db = -6.0
-
-[node name="DeathPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource( 9 )
 
 [connection signal="Hit" from="Player" to="." method="GameOver"]
 [connection signal="Location" from="Player" to="Boss2" method="GetLocation"]
