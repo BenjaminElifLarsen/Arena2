@@ -6,6 +6,7 @@ public class Boss2Turret : Area2D
 	// Declare member variables here. Examples:
 	// private int a = 2;
 	// private string b = "text";
+	private bool _canFire = false;
 	private Vector2 EnemyLocation; 
 	[Export]
 	public PackedScene MobScene;
@@ -37,7 +38,7 @@ public class Boss2Turret : Area2D
 		//GD.Print("X: " + node2.Position.x + " Y: " + node2.Position.y);
 		node.Rotation = (float)(dir.Angle() - (float)Math.PI*0.5);
 		//GD.Print(node.Rotation);
-		if(CurrentFiringCooldown <= 0)
+		if(CurrentFiringCooldown <= 0 && _canFire)
 		{
 			var mobLeft = (Bullet)MobScene.Instance();
 			GetParent().GetParent().AddChild(mobLeft);
@@ -81,6 +82,17 @@ public class Boss2Turret : Area2D
 			CurrentFiringCooldown -= delta;
 		}
 	}
+	
+	public void CanFire()
+	{
+		_canFire = true;
+	}
+	
+	public void StopFire()
+	{
+		_canFire = false;
+	}
+	
 	public void SetLocation(Vector2 location)
 	{
 		EnemyLocation = location;

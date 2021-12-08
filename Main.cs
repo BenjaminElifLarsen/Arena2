@@ -26,12 +26,16 @@ public class Main : Node
 		GetNode<Timer>("ScoreTimer").Stop();
 		HighScore.CurrentScore += Score;
 		GetTree().ChangeScene("res://SecondScreen/SecondBoss.tscn");
+		var boss = GetNode<Boss1>("Boss1");
+		boss.Stop();
 	}
 
 	private void GameOver()
 	{
 		GetNode<Timer>("ScoreTimer").Stop();
 		GetNode<HUD>("HUD").ShowGameOver();
+		var boss = GetNode<Boss1>("Boss1");
+		boss.Stop();
 	}
 
 	public void NewGame()

@@ -84,6 +84,15 @@ public class Boss2 : Area2D
 		//CurrentBulletsInARow = 0;
 		//CurrentFiringCooldown = 0;
 		GetNode<CollisionShape2D>("CollisionShape2D").Disabled = false;
+		var node = (Boss2Turret)GetChild(2);
+		node.CanFire();
+	}
+	
+	public void Stop()
+	{
+		Hide();
+		var node = (Boss2Turret)GetChild(2);
+		node.StopFire();
 	}
 	
 	private void OnBodyEntered(object body)

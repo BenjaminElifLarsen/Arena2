@@ -20,6 +20,7 @@ public class SecondBoss : Node
 		GetNode<Timer>("ScoreTimer").Stop();
 		boss.Hide();
 		HighScore.CurrentScore += Score;
+		boss.Stop();
 		GetTree().ChangeScene("res://Victory/Victory.tscn");
 	}
 
@@ -27,6 +28,8 @@ public class SecondBoss : Node
 	{
 		GetNode<Timer>("ScoreTimer").Stop();
 		GetNode<HUD>("HUD").ShowGameOver();
+		var boss = GetNode<Boss2>("Boss2");
+		boss.Stop();
 	}
 
 	public void NewGame()

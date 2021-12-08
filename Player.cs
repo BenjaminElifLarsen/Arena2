@@ -4,7 +4,7 @@ using System;
 public class Player : Area2D
 {
 	
-	
+	private bool _canFire = false;
 	[Signal]
 	public delegate void Hit();
 	[Signal]
@@ -53,7 +53,7 @@ public class Player : Area2D
 		{
 			velocity.x -= 1;
 		}
-		if(Input.IsActionPressed("ui_up") && CurrentFiringCooldown <= 0)
+		if(Input.IsActionPressed("ui_up") && CurrentFiringCooldown <= 0 && _canFire)
 		{
 			var mobLeft = (FriendlyBullet)MobScene.Instance();
 			var mobRight = (FriendlyBullet)MobScene.Instance();
@@ -104,6 +104,12 @@ public class Player : Area2D
 		EmitSignal(nameof(TakeDamage),Health);
 		Show();
 		GetNode<CollisionShape2D>("CollisionShape2D").Disabled = false;
+		_canFire = true;
+	}
+	
+	public void Stop(){
+		
+		_canFire = false;
 	}
 
 	private void OnPlayerBodyEntered(object body)
@@ -119,7 +125,9 @@ public class Player : Area2D
 		}
 		if(Health == 0)
 		{
+			_canFire = false;
 			EmitSignal(nameof(Hit));
+			//GetNode<AudioStreamPlayer>("../DeathPlayer").Play();
 			Hide();
 			GetNode<CollisionShape2D>("CollisionShape2D").SetDeferred("disabled", true);
 		}

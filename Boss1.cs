@@ -6,6 +6,7 @@ public class Boss1 : Area2D
 	// Declare member variables here. Examples:
 	// private int a = 2;
 	// private string b = "text";
+	private bool _canFire = false;
 	[Signal]
 	public delegate void Killed();
 	[Signal]
@@ -40,7 +41,7 @@ public class Boss1 : Area2D
 //  // Called every frame. 'delta' is the elapsed time since the previous frame.
 	public override void _Process(float delta)
 	{
-		if(CurrentFiringCooldown <= 0)
+		if(CurrentFiringCooldown <= 0 && _canFire)
 		{
 			var mobLeft = (Bullet)MobScene.Instance();
 			GetParent().AddChild(mobLeft);
@@ -126,6 +127,13 @@ public class Boss1 : Area2D
 		CurrentBulletsInARow = 0;
 		CurrentFiringCooldown = 0;
 		GetNode<CollisionShape2D>("CollisionShape2D").Disabled = false;
+		_canFire = true;
+	}
+	
+	public void Stop()
+	{
+		Hide();
+		_canFire = false;
 	}
 	
 	private void OnBoos1BodyEntered(object body)
