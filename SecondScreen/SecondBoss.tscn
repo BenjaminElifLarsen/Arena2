@@ -1,0 +1,65 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://Player.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Boss2.tscn" type="PackedScene" id=2]
+[ext_resource path="res://SecondScreen/SecondBoss.cs" type="Script" id=3]
+[ext_resource path="res://HUD.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Sounds/dova_Dead end strike_master.mp3" type="AudioStream" id=5]
+[ext_resource path="res://Sounds/8bit_bomb_explosion.wav" type="AudioStream" id=6]
+[ext_resource path="res://Sounds/laser1.wav" type="AudioStream" id=7]
+[ext_resource path="res://Sounds/laser8.wav" type="AudioStream" id=8]
+
+[node name="SecondBoss" type="Node"]
+script = ExtResource( 3 )
+
+[node name="background" type="ColorRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0.0745098, 0.219608, 0.0784314, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Player" parent="." instance=ExtResource( 1 )]
+position = Vector2( -153, 12 )
+
+[node name="StartPosition" type="Position2D" parent="."]
+position = Vector2( 512, 850 )
+
+[node name="bossStartPosition" type="Position2D" parent="."]
+position = Vector2( 512, 80 )
+
+[node name="Boss2" parent="." instance=ExtResource( 2 )]
+position = Vector2( -188, 204 )
+
+[node name="HUD" parent="." instance=ExtResource( 4 )]
+
+[node name="ScoreTimer" type="Timer" parent="."]
+
+[node name="StartTimer" type="Timer" parent="."]
+wait_time = 2.0
+one_shot = true
+
+[node name="Main" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 5 )
+autoplay = true
+
+[node name="Lazer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 7 )
+volume_db = -6.0
+
+[node name="Damage" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 6 )
+
+[node name="LazerPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 8 )
+volume_db = -6.0
+
+[connection signal="Hit" from="Player" to="." method="GameOver"]
+[connection signal="Location" from="Player" to="Boss2" method="GetLocation"]
+[connection signal="TakeDamage" from="Player" to="HUD" method="UpdatePlayerHeatlh"]
+[connection signal="Killed" from="Boss2" to="." method="GameWon"]
+[connection signal="TakeDamage" from="Boss2" to="HUD" method="UpdateBossHealth"]
+[connection signal="StartGame" from="HUD" to="." method="NewGame"]
+[connection signal="timeout" from="ScoreTimer" to="." method="OnScoreTimerTimeout"]
+[connection signal="timeout" from="StartTimer" to="." method="OnStartTimerTimeout"]

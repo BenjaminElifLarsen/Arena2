@@ -1,0 +1,17 @@
+D:\Dokumenter\Godot\Arena\.mono\temp\obj\Debug\Arena.csproj.AssemblyReference.cache
+D:\Dokumenter\Godot\Arena\.mono\temp\obj\Debug\Arena.AssemblyInfoInputs.cache
+D:\Dokumenter\Godot\Arena\.mono\temp\obj\Debug\Arena.AssemblyInfo.cs
+D:\Dokumenter\Godot\Arena\.mono\temp\obj\Debug\Arena.csproj.CoreCompileInputs.cache
+D:\Dokumenter\Godot\Arena\.mono\temp\bin\Debug\Arena.dll
+D:\Dokumenter\Godot\Arena\.mono\temp\bin\Debug\Arena.pdb
+D:\Dokumenter\Godot\Arena\.mono\temp\obj\Debug\Arena.dll
+D:\Dokumenter\Godot\Arena\.mono\temp\obj\Debug\Arena.pdb
+C:\Users\bla\Documents\Areana-master\Areana-master\.mono\temp\bin\Debug\Arena.dll
+C:\Users\bla\Documents\Areana-master\Areana-master\.mono\temp\bin\Debug\Arena.pdb
+C:\Users\bla\Documents\Areana-master\Areana-master\.mono\temp\obj\Debug\Arena.csproj.AssemblyReference.cache
+C:\Users\bla\Documents\Areana-master\Areana-master\.mono\temp\obj\Debug\Arena.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\bla\Documents\Areana-master\Areana-master\.mono\temp\obj\Debug\Arena.AssemblyInfoInputs.cache
+C:\Users\bla\Documents\Areana-master\Areana-master\.mono\temp\obj\Debug\Arena.AssemblyInfo.cs
+C:\Users\bla\Documents\Areana-master\Areana-master\.mono\temp\obj\Debug\Arena.csproj.CoreCompileInputs.cache
+C:\Users\bla\Documents\Areana-master\Areana-master\.mono\temp\obj\Debug\Arena.dll
+C:\Users\bla\Documents\Areana-master\Areana-master\.mono\temp\obj\Debug\Arena.pdb

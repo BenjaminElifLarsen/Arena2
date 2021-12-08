@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/dova_Dead end strike_master.mp3-2b9582af1bf2383a507c26c75894f305.mp3str"
+
+[deps]
+
+source_file="res://Sounds/dova_Dead end strike_master.mp3"
+dest_files=[ "res://.import/dova_Dead end strike_master.mp3-2b9582af1bf2383a507c26c75894f305.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

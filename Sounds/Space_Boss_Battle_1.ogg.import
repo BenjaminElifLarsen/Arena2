@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/Space_Boss_Battle_1.ogg-2d2093a45a6f1072a13a4000337cd349.oggstr"
+
+[deps]
+
+source_file="res://Sounds/Space_Boss_Battle_1.ogg"
+dest_files=[ "res://.import/Space_Boss_Battle_1.ogg-2d2093a45a6f1072a13a4000337cd349.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0
