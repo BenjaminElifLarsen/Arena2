@@ -32,6 +32,7 @@ position = Vector2( 512, 80 )
 
 [node name="Boss2" parent="." instance=ExtResource( 2 )]
 position = Vector2( -188, 204 )
+MaxHealth = 40
 
 [node name="HUD" parent="." instance=ExtResource( 4 )]
 

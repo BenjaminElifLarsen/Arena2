@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic; 
 using System.Linq;
 using ScoreFile = System.IO.File;
+using File = Godot.File;
 //using System.Text.Json; 
 //using System.Text.Json.Serialization;
 //using System.Threading.Tasks;
@@ -24,7 +25,11 @@ public class HighScore
 		}
 	}
 	public /*async Task*/ void LoudScores(){
-		string data = ScoreFile.ReadAllText("Score/scores.txt");
+		var file = new File();
+		file.Open("user://scores.txt", File.ModeFlags.Read);
+		string data = file.GetLine();
+		file.Close();
+		//string data = ScoreFile.ReadAllText("user://scores.txt");
 		string[] datas = data.Split(',');
 		Scores = new List<Score>();
 		foreach(var dataset in datas){
@@ -41,7 +46,11 @@ public class HighScore
 		foreach(var score in Scores){
 			data += score.Name + ":" + score.Value + ",";
 		}
-		ScoreFile.WriteAllText("Score/scores.txt", data);
+		var file = new File();
+		file.Open("user://scores.txt", File.ModeFlags.Write);
+		file.StoreLine(data);
+		file.Close();
+		//ScoreFile.WriteAllText("user://scores.txt", data);
 		//using (FileStream createStream = File.Create("scores.json")){
 		//await JsonSerializer.SerializeAsync(createStream, _data);
 		//}

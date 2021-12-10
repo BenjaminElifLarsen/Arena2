@@ -46,6 +46,8 @@ collision_layer = 0
 collision_mask = 0
 script = ExtResource( 4 )
 MobScene = ExtResource( 5 )
+FiringCooldown = 0.027
+MaxBulletsInARow = 100
 
 [node name="AnimatedSprite2" type="AnimatedSprite" parent="Turret"]
 position = Vector2( -6, -30 )

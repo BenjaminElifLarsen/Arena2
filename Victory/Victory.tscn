@@ -31,11 +31,11 @@ position = Vector2( -9, -80 )
 scale = Vector2( 0.6, 0.6 )
 texture = ExtResource( 4 )
 
-[node name="Boss2TurretLabel" type="Label" parent="ColorRect/Boss2/BackgroundTurret"]
-margin_left = 188.0
-margin_top = -29.0005
-margin_right = 283.0
-margin_bottom = -15.0005
+[node name="Boss2TurretLabel" type="Label" parent="ColorRect/Boss2"]
+margin_left = 168.0
+margin_top = -86.0
+margin_right = 263.0
+margin_bottom = -72.0
 rect_rotation = 180.0
 text = "Boss 2's Turret"
 __meta__ = {

@@ -39,7 +39,7 @@ public class Bullet : RigidBody2D
 		velocity.y += 1;
 		var animatedSprite = GetNode<AnimatedSprite>("AnimatedSprite");
 		velocity.x *= XSpeed;
-		velocity.y *=  YSpeed;
+		velocity.y *= YSpeed;
 		velocity = velocity.Normalized() * Speed;
 		animatedSprite.Play();
 		Position += velocity * delta;

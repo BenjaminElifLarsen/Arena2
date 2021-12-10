@@ -67,6 +67,8 @@ public class Boss2Turret : Area2D
 			else if (EnemyLocation.x - spawn.GlobalPosition.x > 0){
 				mobLeft.XSpeed = totalSpeed * xPercentage;
 			}
+			//mobLeft.YSpeed = (1-xPercentage) * totalSpeed; //acts not as expected, works fine in the animal simulation
+			//GD.Print((1-xPercentage) * totalSpeed);
 			mobLeft.YSpeed = totalSpeed;
 			CurrentBulletsInARow++;
 			GetNode<AudioStreamPlayer>("../../Lazer").Play();

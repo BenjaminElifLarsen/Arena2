@@ -1,0 +1,9 @@
+C:\Users\bla\Documents\Areana-master\Areana-master\.mono\temp\bin\ExportDebug\Arena.dll
+C:\Users\bla\Documents\Areana-master\Areana-master\.mono\temp\bin\ExportDebug\Arena.pdb
+C:\Users\bla\Documents\Areana-master\Areana-master\.mono\temp\obj\ExportDebug\Arena.csproj.AssemblyReference.cache
+C:\Users\bla\Documents\Areana-master\Areana-master\.mono\temp\obj\ExportDebug\Arena.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\bla\Documents\Areana-master\Areana-master\.mono\temp\obj\ExportDebug\Arena.AssemblyInfoInputs.cache
+C:\Users\bla\Documents\Areana-master\Areana-master\.mono\temp\obj\ExportDebug\Arena.AssemblyInfo.cs
+C:\Users\bla\Documents\Areana-master\Areana-master\.mono\temp\obj\ExportDebug\Arena.csproj.CoreCompileInputs.cache
+C:\Users\bla\Documents\Areana-master\Areana-master\.mono\temp\obj\ExportDebug\Arena.dll
+C:\Users\bla\Documents\Areana-master\Areana-master\.mono\temp\obj\ExportDebug\Arena.pdb

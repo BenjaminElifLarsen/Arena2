@@ -11,6 +11,7 @@ public class Start : Node
 	public override void _Ready()
 	{
 		
+		GetNode<LineEdit>("LineEdit").Text = HighScore.Name;
 	}
 
 //  // Called every frame. 'delta' is the elapsed time since the previous frame.
