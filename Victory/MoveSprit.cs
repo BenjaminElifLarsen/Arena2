@@ -29,7 +29,7 @@ public class MoveSprit : Sprite
 		Position += velocity * delta;
 		Position = new Vector2(
 			x: Mathf.Clamp(Position.x, -300, ScreenSize.x+1500),
-			y: Mathf.Clamp(Position.y, -300, ScreenSize.y+1500)
+			y: Mathf.Clamp(Position.y, -500, ScreenSize.y+1500)
 		);
 	}
 }

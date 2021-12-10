@@ -14,23 +14,7 @@ script = ExtResource( 1 )
 [node name="ColorRect" type="ColorRect" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
-color = Color( 0.247059, 0.247059, 0.247059, 1 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Player" type="Sprite" parent="ColorRect"]
-position = Vector2( 495, 1237 )
-texture = ExtResource( 2 )
-script = ExtResource( 3 )
-
-[node name="Boss2TurretLabel" type="Label" parent="ColorRect/Player"]
-margin_left = -44.0
-margin_top = -179.0
-margin_right = 51.0
-margin_bottom = -165.0
-text = "You"
-align = 1
+color = Color( 0, 0, 0, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -44,6 +28,7 @@ Speed = 70
 
 [node name="BackgroundTurret" type="Sprite" parent="ColorRect/Boss2"]
 position = Vector2( -9, -80 )
+scale = Vector2( 0.6, 0.6 )
 texture = ExtResource( 4 )
 
 [node name="Boss2TurretLabel" type="Label" parent="ColorRect/Boss2/BackgroundTurret"]
@@ -58,12 +43,54 @@ __meta__ = {
 }
 
 [node name="Boss2Label" type="Label" parent="ColorRect/Boss2"]
-margin_left = 126.0
-margin_top = 139.0
-margin_right = 169.0
-margin_bottom = 153.0
+margin_left = 131.0
+margin_top = 141.0
+margin_right = 174.0
+margin_bottom = 155.0
 rect_rotation = 180.0
 text = "Boss 2"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Player" type="Sprite" parent="ColorRect"]
+position = Vector2( 495, 1237 )
+texture = ExtResource( 2 )
+script = ExtResource( 3 )
+
+[node name="YouLabel" type="Label" parent="ColorRect/Player"]
+margin_left = -44.0
+margin_top = -179.0
+margin_right = 51.0
+margin_bottom = -165.0
+text = "You"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="SoundList" type="Label" parent="ColorRect/Player"]
+margin_left = -59.0
+margin_top = 217.0
+margin_right = 369.0
+margin_bottom = 503.0
+text = "Lasers: https://opengameart.org/content/laser-fire
+
+Damage: https://opengameart.org/content/bombexplosion8bit
+
+Start: https://opengameart.org/content/project-masscinematic
+
+Victory: 
+https://opengameart.org/content/good-mood-theme-8-bit
+
+First Boss: 
+https://opengameart.org/content/spacebossbattle
+
+Second Boss: 
+https://opengameart.org/content/epic-cinematic-emergency-scene
+
+
+"
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -73,6 +100,7 @@ position = Vector2( 270, 1720 )
 rotation = 3.14159
 texture = ExtResource( 5 )
 script = ExtResource( 3 )
+Speed = 44
 
 [node name="Boss1Label" type="Label" parent="ColorRect/Boss1"]
 margin_left = 126.0
