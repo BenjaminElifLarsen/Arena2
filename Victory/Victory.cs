@@ -31,6 +31,13 @@ public class Victory : Node
 	{
 		GetTree().Quit();
 	}
+
+	private void NewGamePResed()
+	{
+		GetTree().ChangeScene("res://Start/Start.tscn");
+		// Replace with function body.
+	}
+
 }
 
 
